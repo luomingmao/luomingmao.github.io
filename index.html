@@ -363,7 +363,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://9pzoca-bn1306.files.1drv.com/y3mnjv7yU4SQWcWL5vG3L6ubyzCMPlYcInCtDMvZcz-k84Nd36AAa8qTMuzOekHwW3Du0GLpXfwhqn2GYe0QejOEpKnt6coPn-abUPKZAnJ4_O6Jhd7uTwCg1BcdUBdw4_xwscR5T_VedbhSFZ3NO9bYsFE8vJZaZwHYXcwYcPmzn8?width=1134&height=484&cropmode=none" rel="gallery_cish5ynr90002aotixoirior1"
+                 href="https://9pzoca-bn1306.files.1drv.com/y3mnjv7yU4SQWcWL5vG3L6ubyzCMPlYcInCtDMvZcz-k84Nd36AAa8qTMuzOekHwW3Du0GLpXfwhqn2GYe0QejOEpKnt6coPn-abUPKZAnJ4_O6Jhd7uTwCg1BcdUBdw4_xwscR5T_VedbhSFZ3NO9bYsFE8vJZaZwHYXcwYcPmzn8?width=1134&height=484&cropmode=none" rel="gallery_cish67u4g0002hotiohfhj1ct"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://9pzoca-bn1306.files.1drv.com/y3mnjv7yU4SQWcWL5vG3L6ubyzCMPlYcInCtDMvZcz-k84Nd36AAa8qTMuzOekHwW3Du0GLpXfwhqn2GYe0QejOEpKnt6coPn-abUPKZAnJ4_O6Jhd7uTwCg1BcdUBdw4_xwscR5T_VedbhSFZ3NO9bYsFE8vJZaZwHYXcwYcPmzn8?width=1134&height=484&cropmode=none" itemprop="contentUrl"/>
               </a>
@@ -377,101 +377,14 @@
 
       
         
-          
-            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
-<p>Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系统启动时校验 system 分区是否被篡改。好处在于可以检测到 system “发生过” 改动，比如用户使用 root 软件强行植入 su 文件，但最后删除了 su， 这种情况也能检测出来。一旦检验不过，系统就不能正常启动，并且有相关的图文提示，请参看：<a href="https://source.android.com/security/verifiedboot/index.html" target="_blank" rel="external">https://source.android.com/security/verifiedboot/index.html</a><br>Android 6.0 的 CDD 文档，章节 9.10. Verified Boot 对该特性有详细的描述。可知，在出厂搭载 Android 6.0 系统的设备上，如果硬件达到要求，是必须激活这一特性的。请参看：<a href="https://static.googleusercontent.com/media/source.android.com/en//compatibility/android-cdd.pdf" target="_blank" rel="external">https://static.googleusercontent.com/media/source.android.com/en//compatibility/android-cdd.pdf</a></p>
+          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
+<p>Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系统启动时校验 system 分区是否被篡改。好处在于可以检测到 system “发生过” 改动，比如用户使用 root 软件强行植入 su 文件，但最后删除了 su， 这种情况也能检测出来。一旦检验不过，系统就不能正常启动，并且有相关的图文提示，请参看：<a href="https://source.android.com/security/verifiedboot/index.html">https://source.android.com/security/verifiedboot/index.html</a><br>Android 6.0 的 CDD 文档，章节 9.10. Verified Boot 对该特性有详细的描述。可知，在出厂搭载 Android 6.0 系统的设备上，如果硬件达到要求，是必须激活这一特性的。请参看：<a href="https://static.googleusercontent.com/media/source.android.com/en//compatibility/android-cdd.pdf">https://static.googleusercontent.com/media/source.android.com/en//compatibility/android-cdd.pdf</a></p>
 </blockquote>
-<h1 id="启用"><a href="#启用" class="headerlink" title="启用"></a>启用</h1><h2 id="在编译系统中开启签名-boot-img-和-recovery-img功能："><a href="#在编译系统中开启签名-boot-img-和-recovery-img功能：" class="headerlink" title="在编译系统中开启签名 boot.img 和 recovery.img功能："></a>在编译系统中开启签名 boot.img 和 recovery.img功能：</h2><h3 id="build-target-product-verity-mk文件中添加："><a href="#build-target-product-verity-mk文件中添加：" class="headerlink" title="build/target/product/verity.mk文件中添加："></a>build/target/product/verity.mk文件中添加：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PRODUCT_SUPPORTS_VERITY := true</div></pre></td></tr></table></figure>
-<h3 id="修改device-qcom-msm8996-msm8996-mk文件："><a href="#修改device-qcom-msm8996-msm8996-mk文件：" class="headerlink" title="修改device/qcom/msm8996/msm8996.mk文件："></a>修改device/qcom/msm8996/msm8996.mk文件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PRODUCT_SPPORTS_VERITY := true</div></pre></td></tr></table></figure>
-<h2 id="开启-LK-验证-Boot-和-Recovery-功能："><a href="#开启-LK-验证-Boot-和-Recovery-功能：" class="headerlink" title="开启 LK 验证 Boot 和 Recovery 功能："></a>开启 LK 验证 Boot 和 Recovery 功能：</h2><h3 id="Bootable-bootloader-lk-AndroidBoot-mk-文件中："><a href="#Bootable-bootloader-lk-AndroidBoot-mk-文件中：" class="headerlink" title="Bootable/bootloader/lk/AndroidBoot.mk 文件中："></a>Bootable/bootloader/lk/AndroidBoot.mk 文件中：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ifeq($PRODUCT.$(INTERNAL_PRODUCT).PRODUCT_SUPPORTS_VERITY), true)</div><div class="line">	VERIFIED_BOOT := VERIFIED_BOOT = 1</div><div class="line">else</div><div class="line">	VERIFIED_BOOT := VERIFIED_BOOT = 0</div><div class="line">endif</div></pre></td></tr></table></figure>
-<h2 id="在-device-tct-project-name-project-name-mk-中添加："><a href="#在-device-tct-project-name-project-name-mk-中添加：" class="headerlink" title="在 device/tct/project_name/project_name.mk 中添加："></a>在 device/tct/project_name/project_name.mk 中添加：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">PRODUCT_SUPPORTS_VERITY := true</div><div class="line">PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system</div><div class="line">$(call inherit-product, build/target/product/verity.mk)</div><div class="line">		</div><div class="line">PRODUCT_COPY_FILES += \</div><div class="line">	frameworks/native/data/etc/android.software.verified_boot.xm:system/etc/permissions/android.software.verified_boot.xml</div></pre></td></tr></table></figure>
-<h2 id="在-device-tct-project-name-fstab-qcom中添加verify标志："><a href="#在-device-tct-project-name-fstab-qcom中添加verify标志：" class="headerlink" title="在 device/tct/project_name/fstab.qcom中添加verify标志："></a>在 device/tct/project_name/fstab.qcom中添加verify标志：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/dev/block/bootdevice/by-name/system    /system     ext4    ro,barrier=1,discard       wait,verify</div></pre></td></tr></table></figure>
-<h1 id="签名key"><a href="#签名key" class="headerlink" title="签名key"></a>签名key</h1><h2 id="默认开发-key"><a href="#默认开发-key" class="headerlink" title="默认开发 key"></a>默认开发 key</h2><p>包括公钥和私钥，它们位于：build/target/product/security/. 它们用来给 boot 和 recovery 签名，以及验证 system partition 的 metadata table. 它们的位置定义位于：build/target/product/verity.mk 文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PRODUCT_VERITY_SIGNING_KDY := build/target/product/security/verity</div></pre></td></tr></table></figure></p>
-<h2 id="Key-文件作用说明："><a href="#Key-文件作用说明：" class="headerlink" title="Key 文件作用说明："></a>Key 文件作用说明：</h2><p>build/target/product/security/</p>
-<ul>
-<li>verity.pk8                – private key used to sign boot.img and system.img   </li>
-<li>verity.x509.pem            – certificate include public key</li>
-<li>verity_key                – public key used in dm verity for system.img</li>
-</ul>
-<p>有些老的版本只有两个key文件：</p>
-<ul>
-<li>verity_private_dev_key    – private key used to sign boot.img and system.img</li>
-<li>verity_key                – public key used in dm verity for system image</li>
-</ul>
-<p>我们可以看到在 build/core/Makefile 文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(BOOT_SIGNER) $(BOOTIMAGE_EXTRA_DEPS)</div><div class="line">$(call pretty,&quot;Target boot image: $@&quot;)</div><div class="line">$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@</div><div class="line">$(BOOT_SIGNER) /boot $@ $(PRODUCTS.$(INTERNAL_PRODUCT).PRODUCT_VERITY_SIGNING_KEY).pk8 $(PRODUCTS.$(INTERNAL_PRODUCT).PRODUCT_VERITY_SIGNING_KEY).x509.pem $@</div><div class="line">$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE))</div></pre></td></tr></table></figure></p>
-<h2 id="生成-OEM-自己的公钥密钥对"><a href="#生成-OEM-自己的公钥密钥对" class="headerlink" title="生成 OEM 自己的公钥密钥对"></a>生成 OEM 自己的公钥密钥对</h2><p>在 Linux 系统中，确保所安装的 openssl 版本足够新，可以参看： /m8996/build/target/product/security_releasekey/README 文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;openssl version</div><div class="line">OpenSSL 1.0.2d 9 Jul 2015</div><div class="line">&gt;development/tools/make_key mykey &apos;/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com&apos;</div></pre></td></tr></table></figure></p>
-<p>不用输入密码，然后 mykey.pk8 和 mykey.x509.pem 将会在当前目录生成。</p>
-<h2 id="为DM-Verity-功能生成-verity-key"><a href="#为DM-Verity-功能生成-verity-key" class="headerlink" title="为DM-Verity 功能生成 verity key"></a>为DM-Verity 功能生成 verity key</h2><h3 id="生成-generate-verity-key"><a href="#生成-generate-verity-key" class="headerlink" title="生成 generate_verity_key"></a>生成 generate_verity_key</h3><p>使用下面的命令来生成 verity key 的工具 generate_verity_key：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source build/envsetup.sh</div><div class="line">choosecombo</div><div class="line">make generate_verity_key (mmm system/extras/verity/)</div></pre></td></tr></table></figure></p>
-<h3 id="将-x509-pem-转换成-verity-key"><a href="#将-x509-pem-转换成-verity-key" class="headerlink" title="将 *.x509.pem 转换成 verity key"></a>将 *.x509.pem 转换成 verity key</h3><p>generate_verity_key 的代码位于：system/extra/verity/generate_verity_key.c<br>generate_verity_key 的用法：generate_verity_key <path-to-key> | -convert <path-to-x509-pem> <path-to-key><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">out/host/linux-x86/bin/generate_verity_key -convert mykey.x509.pem verity_key</div></pre></td></tr></table></figure></path-to-key></path-to-x509-pem></path-to-key></p>
-<h3 id="拷贝并重命名"><a href="#拷贝并重命名" class="headerlink" title="拷贝并重命名"></a>拷贝并重命名</h3><p>拷贝mykey.pk8，mykey.x509.pem，verity_key.pub 至 build/target/product/security/ 目录，将其重命名: verity.pk8， verity.x509.pem，verity_key ，并替换默认的开发 key。</p>
-<h2 id="生成-keystore"><a href="#生成-keystore" class="headerlink" title="生成 keystore"></a>生成 keystore</h2><p>在 LK 里面，有两个 keystore:</p>
-<ul>
-<li>oem_keystore: 编译到 LK 里面，它定义在 /bootloader/lk/platform/msm_shared/include/oem_keystore.h 中。</li>
-<li>user_keystore: 存储在”keystore”分区里面。<br>LK 将使用 OEM keystore 来验证 keystore 分区， 如果验证通过， 将从里面读取 user_keystore，然后用其验证 boot.img 和 recovery.img。   </li>
-</ul>
-<p>Google 已经在后来的 release 里移除 user_keystore，不需要 keystore 分区。</p>
-<p>使用system/extras/verity/keystore_signer, 它实际上是调用openssl 的一个脚本，所以也可以直接调用 openssl来实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keystore_signer &lt;privatekey.pk8&gt;  &lt;crefificate.x509.pem&gt; &lt;outfile&gt; &lt;publickey0.der&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;openssl rsa -in mykey.pk8 -inform DER -pubout -outform DER -out mypub.der</div><div class="line">&gt;java -Xmx512M -jar out/host/linux-x86/framework/KeystoreSigner.jar mykey.pk8 mykey.x509.pem keystore.img mypub.der</div></pre></td></tr></table></figure>
-<p>如果在没有 pk8 格式的老版本上，则可以使用下面的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;keystore_signer &lt;PRIVATE_KEY&gt; &lt;KEYSTORE_IMG&gt; &lt;RSA_PUBLIC_KEY_DER&gt;</div><div class="line">&gt;java -Xmx512M -jar out/host/linux-x86/framework/KeystoreSigner.jar verity_private_dev_key keystore.img mypub.der</div></pre></td></tr></table></figure></p>
-<p>通过上述命令获取 keystore.img之后，可以通过fast boot来刷。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Fastboot flash keystore keystore.img</div></pre></td></tr></table></figure></p>
-<p>当然，如果没有keystore分区，这步可以忽略</p>
-<p>Oem_keystore可以通过下面的方法使用相同的key<br>通过下面的脚本将keystore.img生成oem_keystore.h文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function generate_oem_keystore_h() </div><div class="line">&#123; </div><div class="line">  echo \#ifndef __OEM_KEYSTORE_H </div><div class="line">  echo \#define __OEM_KEYSTORE_H </div><div class="line">  xxd -i $1 | sed -e &apos;s/unsigned char .* = &#123;/const unsigned char OEM_KEYSTORE[] = &#123;/g&apos; -e &apos;s/unsigned int .* =.*;//g&apos; </div><div class="line">  echo \#endif</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">generate_oem_keystore_h keystore.img &gt; oem_keystore.h</div></pre></td></tr></table></figure>
-<p>将该oem_keystore.h文件拷贝到：bootable/bootloader/lk/platform/msm_shared/include</p>
-<h2 id="在-LK-中的代码调用流程"><a href="#在-LK-中的代码调用流程" class="headerlink" title="在 LK 中的代码调用流程"></a>在 LK 中的代码调用流程</h2><ul>
-<li>boot_linux_from_mmc</li>
-<li>boot_verifier_init</li>
-<li>verify_signed_bootimg -&gt; boot_verify_image -&gt; verify_image_with_sig</li>
-</ul>
-<h1 id="手机安全状态"><a href="#手机安全状态" class="headerlink" title="手机安全状态"></a>手机安全状态</h1><p>开启 Verified Boot 功能的设备有三种安全状态：locked, verified 和 unlocked。任何状态的转换都需要使用 fastboot 命令，同时也会擦除 /data 分区（分区置0），当手机启动的时候，新的状态才会改变，同时会将一个新的文件系统挂载到 /data。除此之外，安全状态的改变用户通过物理按键（开机键，音量上下键等）的方式来确认，另外，如果是转换到 unlocked 状态，需要在开发者选项者将 OEM unlock 打开（这步需要屏幕锁验证），同时通过 fastboot oem unlock 打开。</p>
-<h2 id="locked-state"><a href="#locked-state" class="headerlink" title="locked state:"></a>locked state:</h2><ul>
-<li>用户不能使用 fastboot 命令下载或者擦除任何分区。</li>
-<li>boot 和 recovery 分区将会被 keystore 验证 （从 LK 里面的 OEM keystore开始）。</li>
-<li>唯一能使用的 fastboot 命令只有 fastboot oem unlock，但如果要使用该命令，还必须在开发者选项中将 OEM unlock打开（默认关闭）。<h2 id="verified-state"><a href="#verified-state" class="headerlink" title="verified state:"></a>verified state:</h2></li>
-<li>用户可以使用 fastboot 命令来下载或者擦除特定的分区（bootable/bootloader/lk/app/aboot/aboot.c中的 critical_flash_allowed_ptn 结构体）。</li>
-<li>不允许登记 keystore或者篡改 persisten data block。</li>
-<li>对于使用用户或者第三方软件来来，这是个比较合适的状态，特别是开发者需要频繁地烧写软件。</li>
-<li>如果使用了没有被OEM签名的 keystore，那需要处理开机时的警告信息。<h2 id="unlock-state"><a href="#unlock-state" class="headerlink" title="unlock state:"></a>unlock state:</h2></li>
-<li>所有的 fastboot 命令都可以使用。</li>
-<li>用户 keystore 可以被登记或者擦除。</li>
-<li>在这种状态下，boot和recovery不会被验证。同时开机时会有警告，需要按音量上键才能继续启动。</li>
-</ul>
-<h1 id="影响"><a href="#影响" class="headerlink" title="影响"></a>影响</h1><ul>
-<li>软件集成和 OTA 升级，必须使用 block 方式做包和升级，相关工程师需要注意在适配。</li>
-<li>售后，用户自行刷三方固件以及 root  检测等。</li>
-<li>开机速度和 performance, Idol 4S 上实测，从校验开始到 system 分区挂载完成耗时 50 ms 以内，对开机 速度的影响可以忽略，当前没有任何证据表明会影响 performance。</li>
-<li>工程师日常开发调试。</li>
-</ul>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
-<li>该功能在 eng 软件上是关闭的，刷 eng 的 boot.img 不会受影响。</li>
-<li>混刷 boot.img 和 system.img 会启动不了，使能后的 userdebug 或 user 版本的 boot.img 搭配的 eng 版本的 system.img 或者未使能前的 system.img 会开不起来，因为生成时用的 key 不同。</li>
-<li><p>可以通过开机后查看 system 分区的挂载信息来查看是否开启了 Verified Boot 功能：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell mount | grep /system</div></pre></td></tr></table></figure>
-<p>开启显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/dev/block/dm-0 /system ext4 ro,seclabel,relatime,discard,data=ordered 0 0</div></pre></td></tr></table></figure>
-<p>关闭显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/dev/block/bootdevice/by-name/system /system ext4 ro,seclabel,relatime,discard,data=ordered 0 0</div></pre></td></tr></table></figure>
-</li>
-<li><p>通常会使用 userdebug 软件（或者刷 userdebug 版本的 boot.img) 来调试，但使能后，system 是无法挂载成 rw 状态的，不能 push</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ adb root</div><div class="line">Restarting adbd as root</div><div class="line">$ adb remount</div><div class="line">Reremount succeeded</div><div class="line">$ adb shell mount | grep /systtem</div><div class="line">/dev/block/dm-0 /system ext4 ro,seclabel,relatime,discard,data=ordered 0 0</div><div class="line">$ adb push out/target/product/project_name/system/xbin/su /system/xbin/su</div><div class="line">failed to copy &apos;out/target/product/project_name/system/xbin/su&apos; to &apos;/system/xbin/su&apos;: Read-only file system</div></pre></td></tr></table></figure>
-</li>
-<li><p>在 userdebug 软件（或者刷 userdebug 版本的 boot.img）有两种方法可以关闭：</p>
-<ol>
-<li><p>用 adb 命令，重启后生效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ adb disable-verity</div><div class="line">$ adb enable-verity</div></pre></td></tr></table></figure>
-<p>注意，如果重新刷 了 system.img 就要重新操作，因为关闭标志是写在 system.img  尾部的。当启用boot verity功能，一旦你修改了手机里的 system 分区，比如 push 进去一个 apk，再打开的话，手机会起不来。</p>
-</li>
-<li><p>替换 eng.img ，也可以修改 fstab.qcom 文件，重新编译 userdebug 的 boot.img:<br>具体操作是修改 device/tct/project_name/fstab.qcom文件，去掉 verify 标志，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/block/bootdevice/by-name/system    /system     ext4    ro,barrier=1,discard       wait,verify</div><div class="line">/dev/block/bootdevice/by-name/system    /system     ext4    ro,barrier=1,discard       wait</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>user 软件没有办法，如果需要修改 system， 请刷 userdebug 或者 eng 的 boot.img。</p>
-</li>
-<li>旧版的 adb 可能不支持 disable-verity 和 enable-verity 命令，请更新到最新的 Android SDK，或者使用工程编译出来的 adb (out/host/linux-x86/bin/adb)。</li>
-</ul>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/29/Verified-Boot/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -687,7 +600,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

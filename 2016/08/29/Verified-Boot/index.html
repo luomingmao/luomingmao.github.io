@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Security,Android,Boot," />
 
 
 
@@ -93,7 +93,7 @@ Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系�
 <meta property="og:description" content="简介
 Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系统启动时校验 system 分区是否被篡改。好处在于可以检测到 system “发生过” 改动，比如用户使用 root 软件强行植入 su 文件，但最后删除了 su， 这种情况也能检测出来。一旦检验不过，系统就不能正常启动，并且有相关的图文提示，请参看：https://source.android.com">
 <meta property="og:image" content="https://9pzoca-bn1306.files.1drv.com/y3mnjv7yU4SQWcWL5vG3L6ubyzCMPlYcInCtDMvZcz-k84Nd36AAa8qTMuzOekHwW3Du0GLpXfwhqn2GYe0QejOEpKnt6coPn-abUPKZAnJ4_O6Jhd7uTwCg1BcdUBdw4_xwscR5T_VedbhSFZ3NO9bYsFE8vJZaZwHYXcwYcPmzn8?width=1134&height=484&cropmode=none">
-<meta property="og:updated_time" content="2016-08-30T07:37:42.732Z">
+<meta property="og:updated_time" content="2016-08-30T07:46:49.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Verified Boot">
 <meta name="twitter:description" content="简介
@@ -364,7 +364,7 @@ Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系�
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://9pzoca-bn1306.files.1drv.com/y3mnjv7yU4SQWcWL5vG3L6ubyzCMPlYcInCtDMvZcz-k84Nd36AAa8qTMuzOekHwW3Du0GLpXfwhqn2GYe0QejOEpKnt6coPn-abUPKZAnJ4_O6Jhd7uTwCg1BcdUBdw4_xwscR5T_VedbhSFZ3NO9bYsFE8vJZaZwHYXcwYcPmzn8?width=1134&height=484&cropmode=none" rel="gallery_cish5ynr90002aotixoirior1"
+                 href="https://9pzoca-bn1306.files.1drv.com/y3mnjv7yU4SQWcWL5vG3L6ubyzCMPlYcInCtDMvZcz-k84Nd36AAa8qTMuzOekHwW3Du0GLpXfwhqn2GYe0QejOEpKnt6coPn-abUPKZAnJ4_O6Jhd7uTwCg1BcdUBdw4_xwscR5T_VedbhSFZ3NO9bYsFE8vJZaZwHYXcwYcPmzn8?width=1134&height=484&cropmode=none" rel="gallery_cish67u4g0002hotiohfhj1ct"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://9pzoca-bn1306.files.1drv.com/y3mnjv7yU4SQWcWL5vG3L6ubyzCMPlYcInCtDMvZcz-k84Nd36AAa8qTMuzOekHwW3Du0GLpXfwhqn2GYe0QejOEpKnt6coPn-abUPKZAnJ4_O6Jhd7uTwCg1BcdUBdw4_xwscR5T_VedbhSFZ3NO9bYsFE8vJZaZwHYXcwYcPmzn8?width=1134&height=484&cropmode=none" itemprop="contentUrl"/>
               </a>
@@ -380,6 +380,7 @@ Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系�
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
 <p>Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系统启动时校验 system 分区是否被篡改。好处在于可以检测到 system “发生过” 改动，比如用户使用 root 软件强行植入 su 文件，但最后删除了 su， 这种情况也能检测出来。一旦检验不过，系统就不能正常启动，并且有相关的图文提示，请参看：<a href="https://source.android.com/security/verifiedboot/index.html" target="_blank" rel="external">https://source.android.com/security/verifiedboot/index.html</a><br>Android 6.0 的 CDD 文档，章节 9.10. Verified Boot 对该特性有详细的描述。可知，在出厂搭载 Android 6.0 系统的设备上，如果硬件达到要求，是必须激活这一特性的。请参看：<a href="https://static.googleusercontent.com/media/source.android.com/en//compatibility/android-cdd.pdf" target="_blank" rel="external">https://static.googleusercontent.com/media/source.android.com/en//compatibility/android-cdd.pdf</a></p>
 </blockquote>
+<a id="more"></a>
 <h1 id="启用"><a href="#启用" class="headerlink" title="启用"></a>启用</h1><h2 id="在编译系统中开启签名-boot-img-和-recovery-img功能："><a href="#在编译系统中开启签名-boot-img-和-recovery-img功能：" class="headerlink" title="在编译系统中开启签名 boot.img 和 recovery.img功能："></a>在编译系统中开启签名 boot.img 和 recovery.img功能：</h2><h3 id="build-target-product-verity-mk文件中添加："><a href="#build-target-product-verity-mk文件中添加：" class="headerlink" title="build/target/product/verity.mk文件中添加："></a>build/target/product/verity.mk文件中添加：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PRODUCT_SUPPORTS_VERITY := true</div></pre></td></tr></table></figure>
 <h3 id="修改device-qcom-msm8996-msm8996-mk文件："><a href="#修改device-qcom-msm8996-msm8996-mk文件：" class="headerlink" title="修改device/qcom/msm8996/msm8996.mk文件："></a>修改device/qcom/msm8996/msm8996.mk文件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PRODUCT_SPPORTS_VERITY := true</div></pre></td></tr></table></figure>
 <h2 id="开启-LK-验证-Boot-和-Recovery-功能："><a href="#开启-LK-验证-Boot-和-Recovery-功能：" class="headerlink" title="开启 LK 验证 Boot 和 Recovery 功能："></a>开启 LK 验证 Boot 和 Recovery 功能：</h2><h3 id="Bootable-bootloader-lk-AndroidBoot-mk-文件中："><a href="#Bootable-bootloader-lk-AndroidBoot-mk-文件中：" class="headerlink" title="Bootable/bootloader/lk/AndroidBoot.mk 文件中："></a>Bootable/bootloader/lk/AndroidBoot.mk 文件中：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ifeq($PRODUCT.$(INTERNAL_PRODUCT).PRODUCT_SUPPORTS_VERITY), true)</div><div class="line">	VERIFIED_BOOT := VERIFIED_BOOT = 1</div><div class="line">else</div><div class="line">	VERIFIED_BOOT := VERIFIED_BOOT = 0</div><div class="line">endif</div></pre></td></tr></table></figure>
@@ -488,6 +489,16 @@ Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系�
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Security/" rel="tag">#Security</a>
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Boot/" rel="tag">#Boot</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
@@ -588,7 +599,7 @@ Verified Boot 是 Android 4.4 开始引入的一个新特性，作用是在系�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
